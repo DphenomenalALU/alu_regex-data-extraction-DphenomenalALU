@@ -1,4 +1,4 @@
-#!/usr/env/python3
+#!/usr/bin/env python3
 
 import re
 
@@ -21,12 +21,12 @@ Regex patterns are used to find occurrences of these data types, and the results
 sample_text = """
 Email: user@example.com, firstname.lastname@company.co.uk
 URL: https://www.example.com, https://subdomain.example.org/page
-Phone: (123) 456-7890, 123-456-7890, 123.456.7890
+Phone: (123) 456-7890, 123-456-7890, 123.456.7890, +1-800-555-0199
 Credit Card: 1234 5678 9012 3456, 1234-5678-9012-3456
-Time: 14:30, 2:30 PM
+Time: 14:30, 2:30 PM, 25:99, 99:99 PM
 HTML: <p>Hello</p>, <div class="example">Content</div>, <img src="image.jpg" alt="description">
-Hashtags: #example, #ThisIsAHashtag
-Currency: $19.99, $1,234.56
+Hashtags: #example, #ThisIsAHashtag, #not a hashtag
+Currency: $19.99, $1,234.56, €45.00, ¥5000
 """
 
 # Defining regex patterns for different data types
@@ -38,13 +38,13 @@ email_pattern = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
 url_pattern = r"https?://[a-zA-Z0-9.-]+(?:\.[a-zA-Z]{2,})+(?:/[^\s]*)?"
 
 # Phone numbers pattern (matches different formats like (123) 456-7890, 123-456-7890, and 123.456.7890)
-phone_pattern = r"\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}"
+phone_pattern = r"(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}"
 
 # Credit card numbers pattern (matches formats like 1234 5678 9012 3456 and 1234-5678-9012-3456)
 credit_card_pattern = r"\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}"
 
 # Time pattern (matches 24-hour and 12-hour formats with AM/PM)
-time_pattern = r"(?:\d{1,2}:\d{2}(?:\s?[APMapm]{2})?)"
+time_pattern = r"(?:([01]?\d|2[0-3]):([0-5]?\d)(?:\s?[APMapm]{2})?)"
 
 # HTML tags pattern (matches any simple HTML tags)
 html_pattern = r"<.*?>"
@@ -53,7 +53,7 @@ html_pattern = r"<.*?>"
 hashtag_pattern = r"#\w+"
 
 # Currency amounts pattern (matches dollar values with optional commas and decimals)
-currency_pattern = r"\$\d{1,3}(?:,\d{3})*(?:\.\d{2})?"
+currency_pattern = r"\$\d{1,3}(?:,\d{3})*(?:\.\d{2})?|€\d{1,3}(?:,\d{3})*(?:\.\d{2})?|¥\d{1,3}(?:,\d{3})*(?:\.\d{2})?"
 
 # Extract data using regex
 emails = re.findall(email_pattern, sample_text)
