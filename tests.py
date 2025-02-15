@@ -1,3 +1,5 @@
+#!/usr/env/python3
+
 import unittest
 import re
 from extractor import (
