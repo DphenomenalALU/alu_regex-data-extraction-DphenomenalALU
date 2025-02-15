@@ -56,7 +56,6 @@ This Python project demonstrates the use of Regular Expressions (Regex) for extr
 alu_regex-data-extraction-DphenomenalALU/
 │
 ├── extractor.py        # Script that contains the regex patterns and extraction logic
-├── tests.py            # Unit test file to validate regex patterns
 └── README.md           # Project overview and setup instructions
 ```
 
