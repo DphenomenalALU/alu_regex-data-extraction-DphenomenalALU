@@ -27,7 +27,7 @@ Hashtags: #example, #ThisIsAHashtag
 Currency: $19.99, $1,234.56
 """
 
-# Define regex patterns for different data types
+# Defining regex patterns for different data types
 
 # Email addresses pattern (matches common email formats)
 email_pattern = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"  
