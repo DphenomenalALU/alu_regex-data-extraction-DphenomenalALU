@@ -31,7 +31,6 @@ This Python project demonstrates the use of Regular Expressions (Regex) for extr
 ## Prerequisites
 
 - Python 3.x
-- Python `unittest` library (included in the standard library)
 - No external dependencies are required.
 
 ## Installation
@@ -63,7 +62,7 @@ alu_regex-data-extraction-DphenomenalALU/
 
 ## Usage
 
-1. **Run the extraction script:**
+**Run the extraction script:**
 
    To run the script and see the data extraction in action, simply run the `extractor.py` file:
 
@@ -72,16 +71,6 @@ alu_regex-data-extraction-DphenomenalALU/
    ```
 
    This will output the extracted data, such as email addresses, URLs, phone numbers, etc., based on the sample text in the script.
-
-2. **Run the unit tests:**
-
-   To ensure the accuracy of your regex patterns, you can run the tests using the `unittest` module:
-
-   ```bash
-   python3 -m unittest tests.py
-   ```
-
-   This will run all the test cases and output the results, confirming whether the regex patterns are working as expected.
 
 ## How It Works
 
@@ -96,22 +85,7 @@ alu_regex-data-extraction-DphenomenalALU/
 3. **Output:**
    The extracted data is printed in a labeled format for easy reading.
 
-### Unit Tests (`tests.py`)
-
-1. **Test Setup:**
-   The test file uses Python's built-in `unittest` module to define test cases for each regex pattern. Each test verifies that the regex correctly identifies valid data and ignores invalid data.
-
-2. **Test Cases:**
-   - **Emails:** Checks for various valid and invalid email formats.
-   - **URLs:** Validates that only well-formed URLs are extracted.
-   - **Phone Numbers:** Verifies multiple phone number formats.
-   - **Credit Card Numbers:** Tests different formats of credit card numbers.
-   - **Times:** Ensures correct extraction of time formats (12-hour and 24-hour).
-   - **HTML Tags:** Validates the extraction of HTML tags.
-   - **Hashtags:** Checks if hashtags are correctly identified.
-   - **Currency Amounts:** Ensures proper extraction of currency amounts.
-
-## Edge Cases Handled
+## Handling Edge Cases
 
 - **Emails:**
   - Handles different valid email formats (e.g., with subdomains, aliases).
